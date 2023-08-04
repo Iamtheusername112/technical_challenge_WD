@@ -1,7 +1,9 @@
 const express = require("express");
-const app = express();
-const phonesData = require("./data/phones.json");
+const cors = require("cors");
 
+const app = express();
+app.use(cors());
+const phonesData = require("./data/phones.json");
 app.get("/phones", (req, res) => {
   res.json(phonesData);
 });
